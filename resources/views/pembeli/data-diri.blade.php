@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Diri Pembeli</title>
+
+    @vite(['resources/css/data-diri.css', 'resources/css/navigasi-bawah.css', 'resources/js/maintenance.js'])
+</head>
+
+<body>
+    <main class="halaman-data-diri">
+        <header class="kepala-halaman">
+            <a href="{{ route('pembeli.profile') }}" class="tombol-bulat" aria-label="Kembali">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+                </svg>
+            </a>
+
+            <h1 class="judul-halaman">Data Diri</h1>
+
+            <div class="ruang-kanan" aria-hidden="true"></div>
+        </header>
+
+        <section class="konten-data-diri">
+            <article class="kartu-data-diri">
+                <div class="ringkasan-data-diri">
+                    <span class="ikon-data-diri" aria-hidden="true">
+                        <img src="{{ asset('assets/profile/gambar_profile.png') }}" alt="">
+                    </span>
+
+                    <div>
+                        <h2>Informasi Pembeli</h2>
+                        <p>Lengkapi data diri untuk kebutuhan pembelian produk petani.</p>
+                    </div>
+                </div>
+
+                <form class="form-data-diri" action="#" method="POST">
+                    @csrf
+
+                    <label>
+                        <span>Nama Gudang</span>
+                        <input
+                            type="text"
+                            name="nama_gudang"
+                            placeholder="Masukkan nama gudang"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>Nama Lengkap</span>
+                        <input
+                            type="text"
+                            name="nama_lengkap"
+                            placeholder="Masukkan nama lengkap"
+                            autocomplete="name"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>No Handphone</span>
+                        <input
+                            type="tel"
+                            name="no_handphone"
+                            inputmode="tel"
+                            placeholder="Masukkan no handphone"
+                            autocomplete="tel"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        <span>Alamat</span>
+                        <textarea
+                            name="alamat"
+                            rows="4"
+                            placeholder="Masukkan alamat lengkap"
+                            required
+                        ></textarea>
+                    </label>
+
+                    <button type="submit">SIMPAN</button>
+                </form>
+            </article>
+        </section>
+
+        <x-navigasi-pembeli aktif="profile" />
+    </main>
+</body>
+</html>

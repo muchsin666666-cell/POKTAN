@@ -1,0 +1,46 @@
+# File rahasia
+.env
+.env.*
+!.env.example
+
+# Dependency
+/vendor/
+/node_modules/
+
+# Build hasil compile
+/public/build/
+/public/hot
+
+# Laravel cache, session, view, log
+/storage/logs/*
+!/storage/logs/.gitignore
+
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+
+# Database lokal dan backup
+/database/database.sqlite
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+*.backup
+*.bak
+
+# Folder project dobel di dalam project
+/POKTAN(COBA)/
+
+# Editor dan sistem
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
